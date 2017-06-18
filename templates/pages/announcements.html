@@ -11,6 +11,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <title>Mathletes</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="cache-control" content="no-cache"/>
 <link rel="icon" type="image/x-icon" href="static/images/demo/favicon.ico">
 <link href="static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all" />
 <link href="static/layout/styles/announcements.css" rel="stylesheet" type="text/css" media="all" />
@@ -48,20 +49,16 @@ Licence URI: http://www.os-templates.com/template-terms
     </div>
   </header>
 </div>
-<div class="wrapper">
-  <br/>
-  <h1>Reporting Date</h1>
-  <p>The reporting date for all students is 16<sup>th</sup>July, 2017. Students are advised to come at the earliest so that they ensure proper settlements.</p>
-  <br/>
-  <h1>T-Shirts</h1>
-  <p>We have come up with new T-shirt design for Mathletes. You can have a look here. Orders can be placed by contacting (person_name) or through the site.</p>
-  <br/>
-  <h1>T-Shirts</h1>
-  <p>We have come up with new T-shirt design for Mathletes. You can have a look here. Orders can be placed by contacting (person_name) or through this site.</p>
-  <br/>
-  <h1>Reporting Date</h1>
-  <p>The reporting date for all students is 16<sup>th</sup>July, 2017. Students are advised to come at the earliest so that they ensure proper settlements.</p>
-  <button>Make an announcement.</button>
+<div class="wrapper showannouncement">
+  <button id="announcebutton">Make an announcement.</button>
+</div>
+<div class="wrapper makeannouncement">
+<form method="POST" action="/makeannouncement">
+<input type="text" placeholder="Heading" name="heading" required="required"/>
+<textarea placeholder="Enter your description here" name="description" required="required">
+</textarea>
+<button>Submit</button>
+</form>
 </div>
 <script src="static/layout/scripts/jquery.min.js"></script>
 <script src="static/layout/scripts/jquery.backtotop.js"></script>

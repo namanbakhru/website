@@ -141,5 +141,19 @@ def signUpFeed():
 def announcement():
 	return render_template("pages/announcements.html");
 
+@app.route("/makeannouncement", methods=["POST"])
+def makeAnnouncement():
+	heading = request.form['heading'];
+	description = request.form['description'];
+	announcefile = open("static/announcements.html");
+	initial = announcefile.read();
+	announcefile.close();
+	announcefile = open("static/announcements.html", "w");
+	prepend = "<br/><h1>"+heading+"</h1><p>"+description+"</p>";
+	final = prepend+initial;
+	announcefile.write(final);
+	announcefile.close();
+	return "Go Back (and press Ctrl+F5) to see announcement";
+
 if __name__ == "__main__":
     app.run(debug=True);
